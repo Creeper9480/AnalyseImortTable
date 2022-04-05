@@ -6,8 +6,11 @@ Analyse ImortTable in PE file
 
 #### 程序架构
 GetPEInfo.py --- 主程序
+
 PEInfo.py --- 分析PE头
+
 ImportTableInfo.py --- 分析导入表
+
 data.py --- 存储了PE文件的结构信息
 
 #### 安装教程
