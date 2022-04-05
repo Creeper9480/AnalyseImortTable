@@ -103,14 +103,24 @@ class ImportTableInfo:
                 for i in range(len(self.__OriginalFirstThunk[1]) - 1):
                     if type(self.__OriginalFirstThunk[2][i + 1]) == int:
                         print(",{:#06x}".format(self.__OriginalFirstThunk[2][i + 1]))
-                    else:
-                        print("函数名为：", self.__OriginalFirstThunk[2][i + 1][1])
+                for i in range(len(self.__OriginalFirstThunk[1]) - 1):
+                    if functionName == 0:
+                        break
+                    elif functionName == 1 and type(self.__OriginalFirstThunk[2][i + 1]) != int:
+                        print("\n函数名为：", self.__OriginalFirstThunk[2][1][1])
+                    elif type(self.__OriginalFirstThunk[2][i + 1]) != int:
+                        print(",", self.__OriginalFirstThunk[2][i + 1][1])
             else:
                 print("函数名为：", self.__OriginalFirstThunk[2][0][1], end="")
                 for i in range(len(self.__OriginalFirstThunk[1]) - 1):
                     if type(self.__OriginalFirstThunk[2][i + 1]) == int:
                         print(",{:#06x}".format(self.__OriginalFirstThunk[2][i + 1]))
-                    else:
+                for i in range(len(self.__OriginalFirstThunk[1]) - 1):
+                    if functionNum == 0:
+                        break
+                    elif functionNum == 1 and type(self.__OriginalFirstThunk[2][i + 1]) != int:
+                        print("函数序号为：{:#06x}".format(self.__OriginalFirstThunk[2][1]), end="")
+                    elif type(self.__OriginalFirstThunk[2][i + 1]) == int:
                         print(",", self.__OriginalFirstThunk[2][i + 1][1])
         if len(self.__OriginalFirstThunk[2]) <= 1:
             if type(self.__OriginalFirstThunk[2][0]) == int:
