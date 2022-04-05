@@ -139,7 +139,7 @@ class ImportTableInfo:
                     else:
                         print(("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x},函数名{:}").format(
                             "",
-                            self.__OriginalFirstThunk[1][0],
+                            self.__OriginalFirstThunk[1][i+1],
                             self.__OriginalFirstThunk[2][i + 1][0],
                             self.__OriginalFirstThunk[2][i + 1][1]))
             else:
@@ -153,7 +153,7 @@ class ImportTableInfo:
                         print(("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x},函数名{:}").format(
                             "",
                             self.__OriginalFirstThunk[0],
-                            self.__OriginalFirstThunk[1][0],
+                            self.__OriginalFirstThunk[1][i+1],
                             self.__OriginalFirstThunk[2][i + 1][0],
                             self.__OriginalFirstThunk[2][i + 1][1]))
                     else:
