@@ -75,6 +75,7 @@ if __name__ == "__main__":
     analyseDos()
 
     print("\n{:=^55}\n".format("PE文件头部分"))
+    print("{:25}{:16}{:10}".format("字段名称", "在文件中的偏移", "数据内容"))
     for item in peinfo:
         print("{:25}".format(item[0]), end="")
         tmp = PEInfo(file, pedata["e_lfanew字段"].info + item[1], item[2], item[3])
@@ -85,6 +86,7 @@ if __name__ == "__main__":
     print("\n{:=^55}".format("PE文件节表部分"))
     for sectionNumber in range(pedata["NumberofSections字段"].info):
         print()
+        print("{:25}{:16}{:10}".format("字段名称", "在文件中的偏移", "数据内容"))
         sectiontuple = ()
         for item in sectioninfo:
             print("{:25}".format(item[0]), end="")
@@ -103,6 +105,7 @@ if __name__ == "__main__":
     for i in range(numberOfImportTable):
         print()
         print("第{:}个导入表".format(i + 1))
+        print("{:25}{:16}{:10}".format("字段名称", "在文件中的偏移", "数据内容"))
         importtable = ImportTableInfo(file, offset + i * 0x14, sectiondata[sectionName][2].info,
                                       sectiondata[sectionName][4].info)
         importtables[i] = importtable
