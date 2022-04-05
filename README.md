@@ -1,4 +1,4 @@
-# AnalyseImortTable
+# Analyse_ImortTable
 
 #### 介绍
 此程序用于在PE文件中寻找导入表并分析导入表
