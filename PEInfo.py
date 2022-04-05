@@ -37,7 +37,7 @@ class PEInfo:
     def PrintInfo(self):
         if self.__byteorder in ['little', 'l']:
             if self.__size == 2:
-                print("\t{0:^#010x}\t\t\t{1:10}".format(self.__baseaddr, self.__datastr))
+                print("\t{0:#010x}\t\t\t{1:10}".format(self.__baseaddr, self.__datastr))
             elif self.__size == 4:
                 print("\t{0:#010x}\t\t\t{1:10}".format(self.__baseaddr, self.__datastr))
         elif self.__byteorder in ['big', 'b']:
