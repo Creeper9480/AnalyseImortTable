@@ -101,11 +101,17 @@ class ImportTableInfo:
             if type(self.__OriginalFirstThunk[2][0]) == int:
                 print("函数序号为：{:#06x}".format(self.__OriginalFirstThunk[2][0]), end="")
                 for i in range(len(self.__OriginalFirstThunk[1]) - 1):
-                    print(",{:#06x}".format(self.__OriginalFirstThunk[2][i + 1]))
+                    if type(self.__OriginalFirstThunk[2][i + 1]) == int:
+                        print(",{:#06x}".format(self.__OriginalFirstThunk[2][i + 1]))
+                    else:
+                        print("函数名为：", self.__OriginalFirstThunk[2][i + 1][1])
             else:
                 print("函数名为：", self.__OriginalFirstThunk[2][0][1], end="")
                 for i in range(len(self.__OriginalFirstThunk[1]) - 1):
-                    print(",", self.__OriginalFirstThunk[2][i + 1][1])
+                    if type(self.__OriginalFirstThunk[2][i + 1]) == int:
+                        print(",{:#06x}".format(self.__OriginalFirstThunk[2][i + 1]))
+                    else:
+                        print(",", self.__OriginalFirstThunk[2][i + 1][1])
         if len(self.__OriginalFirstThunk[2]) <= 1:
             if type(self.__OriginalFirstThunk[2][0]) == int:
                 print("导入表结构:{:} : INT {:#x} --> {:#x} --> 序号{:#06x}".format(self.__Name1[1],
@@ -125,10 +131,17 @@ class ImportTableInfo:
                                                                              self.__OriginalFirstThunk[1][0],
                                                                              self.__OriginalFirstThunk[2][0]))
                 for i in range(len(self.__OriginalFirstThunk[1]) - 1):
-                    print(
-                        ("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x}").format(
-                            "", self.__OriginalFirstThunk[1][i + 1],
-                            self.__OriginalFirstThunk[2][i + 1]))
+                    if type(self.__OriginalFirstThunk[2][i + 1]) == int:
+                        print(
+                            ("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x}").format(
+                                "", self.__OriginalFirstThunk[1][i + 1],
+                                self.__OriginalFirstThunk[2][i + 1]))
+                    else:
+                        print(("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x},函数名{:}").format(
+                            "",
+                            self.__OriginalFirstThunk[1][0],
+                            self.__OriginalFirstThunk[2][i + 1][0],
+                            self.__OriginalFirstThunk[2][i + 1][1]))
             else:
                 print("导入表结构:{:} : INT {:#x} --> {:#x} --> 序号{:#06x},函数名{:}".format(self.__Name1[1],
                                                                                     self.__OriginalFirstThunk[0],
@@ -136,8 +149,16 @@ class ImportTableInfo:
                                                                                     self.__OriginalFirstThunk[2][0][0],
                                                                                     self.__OriginalFirstThunk[2][0][1]))
                 for i in range(len(self.__OriginalFirstThunk[1]) - 1):
-                    print(
-                        ("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x},函数名{:}").format(
-                            "", self.__OriginalFirstThunk[1][i + 1],
+                    if type(self.__OriginalFirstThunk[2][i + 1]) == int:
+                        print(("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x},函数名{:}").format(
+                            "",
+                            self.__OriginalFirstThunk[0],
+                            self.__OriginalFirstThunk[1][0],
                             self.__OriginalFirstThunk[2][i + 1][0],
                             self.__OriginalFirstThunk[2][i + 1][1]))
+                    else:
+                        print(
+                            ("{:^" + str(23 + len(self.__Name1[1])) + "}" + "--> {:#x} --> 序号{:#06x},函数名{:}").format(
+                                "", self.__OriginalFirstThunk[1][i + 1],
+                                self.__OriginalFirstThunk[2][i + 1][0],
+                                self.__OriginalFirstThunk[2][i + 1][1]))

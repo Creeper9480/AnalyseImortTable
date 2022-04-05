@@ -64,7 +64,8 @@ if __name__ == "__main__":
         file = open(sys.argv[1], "rb")
         print(file.read())
     else:
-        file = open("hello25 - 201924262.exe", "rb")
+        file = open("hello25 - 20192426.exe", "rb")
+        # file = open("hello25 - 201924262.exe", "rb")
     print("{:=^55}\n".format("PE文件DOS头部分"))
     for item in dosinfo:
         print("{:25}".format(item[0]), end="")
