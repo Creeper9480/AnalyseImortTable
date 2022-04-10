@@ -13,7 +13,7 @@ def analyseDos():
 
 
 def analysePE():
-    print("\n根据Machine字段和SizeofOptionalHeader字段，", end="")
+    print("\n根据Machine字段和SizeofOptionalHeader字段以及Magic字段，", end="")
     if pedata["Machine字段"].info == 0x014c and pedata["SizeofOptionalHeader字段"].info == 0xe0 and pedata[
         "Magic字段"].info == 0x10b:
         print("该PE文件为32位PE文件")
