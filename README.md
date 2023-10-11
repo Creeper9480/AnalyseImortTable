@@ -16,4 +16,7 @@ data.py --- 存储了PE文件的结构信息
 #### 安装教程
 
 1.  将本项目克隆到本地
-2.  在cmd或powershell中运行命令“python GetPEInfo.py”
+2.  在cmd或powershell中运行命令
+```bash
+ python GetPEInfo.py
+```
