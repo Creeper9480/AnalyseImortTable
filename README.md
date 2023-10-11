@@ -1,6 +1,7 @@
 # Analyse_ImortTable
 
 #### 介绍
+> 注意Hello25.exe可能为**恶意程序**，仅作为分析导入表程序使用，请勿直接在本地运行。
 此程序用于在PE文件中寻找导入表并分析导入表
 Analyse ImortTable in PE file
 
@@ -18,5 +19,6 @@ data.py --- 存储了PE文件的结构信息
 1.  将本项目克隆到本地
 2.  在cmd或powershell中运行命令
 ```bash
- python GetPEInfo.py
+ python GetPEInfo.py [filename]
 ```
+- 注意，可选参数`filename`如需使用，请传入绝对路径。
