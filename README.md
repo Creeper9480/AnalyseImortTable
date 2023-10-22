@@ -21,4 +21,4 @@ data.py --- 存储了PE文件的结构信息
 ```bash
  python GetPEInfo.py [filename]
 ```
-- 注意，可选参数`filename`如需使用，请传入绝对路径。
+- 注意，可选参数`filename`如需使用，请传入绝对路径，若不使用默认分析`hello25 - 20192426.exe`。
